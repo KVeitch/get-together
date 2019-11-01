@@ -6,3 +6,4 @@ export const FlightList = () => {
   )
 }
 
+export default FlightList;

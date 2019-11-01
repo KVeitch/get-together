@@ -5,3 +5,5 @@ export const ImageList = () => {
     'Image List'
   )
 }
+
+export default ImageList;
