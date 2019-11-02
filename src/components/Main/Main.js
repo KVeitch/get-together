@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import airportCodes from '../../util/airports'
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { setMeFlights, setYouFlights, setStartDate, setReturnDate, setMeStart, setYouStart, setDestination } from '../../actions';
+import { getFlights } from '../../util/apiCalls'
 import './Main.scss'
 
 export class Main extends Component {
@@ -31,65 +35,75 @@ export class Main extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    console.log('Sub click')
+    const { setStartDate, setReturnDate, setMeStart, setYouStart, setDestination } = this.props;
+    const { meStart, youStart, destination, startDate, returnDate } = this.state;
+
+    setStartDate(startDate)
+    setReturnDate(returnDate)
+    setMeStart(meStart)
+    setYouStart(youStart)
+    setDestination(destination)
+    
+    // getFlights(date, startingLocation, destination)
+
   }
 
 
   render= () =>{
     
-    const airports = Object.keys(airportCodes).map((airport) => <option value={`${airport}:${airportCodes[airport]}`} />)
+    const airports = Object.keys(airportCodes).map((airport, i) => <option key={i} value={`${airport}:${airportCodes[airport]}`} />)
 
 
     return(
-      <form class="main__form-flight" onSubmit={this.handleSubmit}>
+      <form className="main__form-flight" onSubmit={this.handleSubmit}>
         <h3>Where are we getting together?</h3>
-        <section class="enterDestination" >
+        <section>
           <input
-            class="destination"
+            className="destination"
             type="text"
             placeholder="SDY"
             name="destination"
             list="airportCodes"
-            autocomplete="off"
+            autoComplete="off"
             required
             onChange={this.handleChange}
           />
         </section>
-        <h3 class="originatingAirport">Where Are We Traveling From?</h3>
-        <section class="form__section" >
-          <div class="section__input-container">
+        <h3 className="originatingAirport">Where Are We Traveling From?</h3>
+        <section className="form__section" >
+          <div className="section__departure-container">
             <label>Me</label>
             <input
-              class="airport0"
+              className="airport0"
               type="text"
               placeholder="DEN"
               name="meStart"
               list="airportCodes"
-              autocomplete="on"
+              autoComplete="on"
               required
               onChange={this.handleChange}
             />
           </div>
-          <div class="section__input-container">
+          <div className="section__departure-container">
             <label>You</label>
             <input
-              class="airport1"
+              className="airport1"
               type="text"
-              placeholder="NYC"
+              placeholder="JFK"
               name='youStart'
               list="airportCodes"
-              autocomplete="off"
+              autoComplete="off"
               required
               onChange={this.handleChange}
             />
           </div>
         </section>
-        <h3 class="whereTitle">When Are We Going?</h3>
-        <section class="trip__dates">
-          <div class="section__input-container">
+        <h3>When Are We Going?</h3>
+        <section className="form__section">
+          <div className="date__container">
             <label>Leaving On</label>
             <input
-              class="startDate"
+              className="startDate"
               type="date"
               name="startDate"
               placeholder="mm/dd/yyyy"
@@ -97,10 +111,10 @@ export class Main extends Component {
               required
             />
           </div>
-          <div class="formSection">
+          <div className="date__container">
             <label>Coming Back</label>
             <input
-              class="endDate"
+              className="endDate"
               type="date"
               name="returnDate"
               placeholder="mm/dd/yyyy"
@@ -110,7 +124,7 @@ export class Main extends Component {
           </div>
         </section>
         <button 
-          class="form__btn-submit"
+          className="form__btn-submit"
           onClick={this.handleClick}
           type="submit">Let's Go!</button>
         <datalist id="airportCodes">
@@ -121,4 +135,18 @@ export class Main extends Component {
 
 }
 
-export default Main;
+export const mapStateToProps = (state) => ({
+
+});
+
+export const mapDispatchToProps = (dispatch) => (bindActionCreators({
+  setMeFlights,
+  setYouFlights,
+  setStartDate,
+  setReturnDate,
+  setMeStart,
+  setYouStart,
+  setDestination,
+}, dispatch));
+
+export default connect(mapStateToProps, mapDispatchToProps) (Main);
