@@ -1,4 +1,4 @@
-const meStart = (state = [], action) => {
+const meStart = (state = '', action) => {
   switch (action.type) {
     case 'SET_ME_START':
       return action.airport;

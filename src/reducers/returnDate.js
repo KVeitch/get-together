@@ -1,4 +1,4 @@
-const returnDate = (state = [], action) => {
+const returnDate = (state = {}, action) => {
   switch (action.type) {
     case 'SET_RETURN_DATE':
       return action.date;
