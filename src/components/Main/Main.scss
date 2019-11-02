@@ -1,3 +1,4 @@
+@import '../../variables.scss';
 // $main-bg: #d6cbff;
 // $main-higlight: #CBDEFF;
 // $main-secondary: #FFCBDA
@@ -17,20 +18,19 @@
 }
 
 .form__section {
-  width:50vw;
+  // width:70vw;
   display:flex;
-  justify-content: space-between;
+  // justify-content: space-between;
 }
 
-.section__input-container {
-  display:flex;
-  flex-direction: row;
-  justify-content: center;
+.section__departure-container {
+  border:1px solid $main-secondary;
 }
 
 label {
   margin-right: 10px;
   font-size:1.5em;
+  display:block;
 }
 
 input {
@@ -47,6 +47,7 @@ input {
   text-overflow:ellipsis;
   font-size: 1.5em;
   text-align: center;
+  margin-top:20px;
 }
 
 
