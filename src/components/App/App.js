@@ -16,7 +16,7 @@ export class App extends Component {
 
   render = () => (
       <div className="App">
-         <header class="title">
+         <header className="title">
            <div className='title-container'>
             <Link to='/'>
             <img className='plane-image' src={bluePlane} />
