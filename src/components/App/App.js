@@ -22,7 +22,7 @@ export class App extends Component {
             <img className='plane-image' src={bluePlane} />
             </Link>
             <Link to='/'>
-              <h1>Get Together</h1>
+              <h1>Connection</h1>
             </Link>
             <img className='plane-image image-mirror' src={bluePlane} />
             </div>
