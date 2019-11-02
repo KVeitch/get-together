@@ -15,20 +15,28 @@ export const setLocationPictures = (pictures) => ({
 
 export const setStartDate = (date) => ({
   type: 'SET_START_DATE',
-  date
+  date,
 });
 
 export const setReturnDate = (date) => ({
   type: 'SET_RETURN_DATE',
-  date
+  date,
 });
 
-export const setMeStart = (airport) => ({
+export const setMeStart = (airport) => {
+  console.log('set:', airport)
+  return({
   type: 'SET_ME_START',
   airport,
 });
+}
 
 export const setYouStart = (airport) => ({
   type: 'SET_YOU_START',
-  airport
+  airport,
 });
+
+export const setDestination = (destination) => ({
+  type: 'SET_DESTINATION',
+  destination,
+})
