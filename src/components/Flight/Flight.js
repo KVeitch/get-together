@@ -1,5 +1,6 @@
 import React from 'react';
-import './Flight.scss'
+import './Flight.scss';
+
 const Flight = ({ flight }) => {
   const {depart, arrive, from, to, flightNo} = flight;    
   return(
