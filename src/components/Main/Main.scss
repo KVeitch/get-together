@@ -1,0 +1,52 @@
+// $main-bg: #d6cbff;
+// $main-higlight: #CBDEFF;
+// $main-secondary: #FFCBDA
+
+.main__form-flight {
+  padding:5vh;
+  display:flex;
+  flex-direction: column;
+  // justify-content: center;
+  align-items: center;
+
+  h3 {
+    font-size: 2em;
+    margin-top:.5em;
+  }
+
+}
+
+.form__section {
+  width:50vw;
+  display:flex;
+  justify-content: space-between;
+}
+
+.section__input-container {
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+label {
+  margin-right: 10px;
+  font-size:1.5em;
+}
+
+input {
+  height:2em;
+  width:15em;
+  text-overflow:ellipsis;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.form__btn-submit {
+  height:2em;
+  width:15em;
+  text-overflow:ellipsis;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+

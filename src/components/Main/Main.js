@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import airportCodes from '../../util/airports'
+import './Main.scss'
 
 export class Main extends Component {
   constructor() {
@@ -12,8 +13,6 @@ export class Main extends Component {
       returnDate:'',
     }
   }
-
-
 
   handleChange = (e) => {
     const airportCode = e.target.value.split(':')[0].toUpperCase()
@@ -42,7 +41,7 @@ export class Main extends Component {
 
 
     return(
-      <form class="flightSearchForm" onSubmit={this.handleSubmit}>
+      <form class="main__form-flight" onSubmit={this.handleSubmit}>
         <h3>Where are we getting together?</h3>
         <section class="enterDestination" >
           <input
@@ -57,8 +56,8 @@ export class Main extends Component {
           />
         </section>
         <h3 class="originatingAirport">Where Are We Traveling From?</h3>
-        <section class="enterOrigin" >
-          <div class="formSection">
+        <section class="form__section" >
+          <div class="section__input-container">
             <label>Me</label>
             <input
               class="airport0"
@@ -71,7 +70,7 @@ export class Main extends Component {
               onChange={this.handleChange}
             />
           </div>
-          <div class="formSection">
+          <div class="section__input-container">
             <label>You</label>
             <input
               class="airport1"
@@ -86,8 +85,8 @@ export class Main extends Component {
           </div>
         </section>
         <h3 class="whereTitle">When Are We Going?</h3>
-        <section class="enterTripDates">
-          <div class="formSection">
+        <section class="trip__dates">
+          <div class="section__input-container">
             <label>Leaving On</label>
             <input
               class="startDate"
@@ -111,7 +110,7 @@ export class Main extends Component {
           </div>
         </section>
         <button 
-          class="letsGo"
+          class="form__btn-submit"
           onClick={this.handleClick}
           type="submit">Let's Go!</button>
         <datalist id="airportCodes">
