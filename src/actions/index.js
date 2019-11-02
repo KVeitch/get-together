@@ -23,13 +23,10 @@ export const setReturnDate = (date) => ({
   date,
 });
 
-export const setMeStart = (airport) => {
-  console.log('set:', airport)
-  return({
+export const setMeStart = (airport) => ({
   type: 'SET_ME_START',
   airport,
 });
-}
 
 export const setYouStart = (airport) => ({
   type: 'SET_YOU_START',
@@ -39,4 +36,14 @@ export const setYouStart = (airport) => ({
 export const setDestination = (destination) => ({
   type: 'SET_DESTINATION',
   destination,
+})
+
+export const setImages = (images) => ({
+  type: 'SET_IMAGES',
+  images,
+})
+
+export const setCityName = (cityName) => ({
+  type: 'SET_CITY_NAME',
+  cityName,
 })
