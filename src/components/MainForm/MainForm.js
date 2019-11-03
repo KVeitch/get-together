@@ -49,40 +49,60 @@ export class MainForm extends Component {
     setCityName(airportCodes[destination])
     this.getMeToDestination(startDate, meStart, destination);
     this.getMeToHome(returnDate, destination, meStart)
-    this.getYouToHome(returnDate, destination, youStart)
     this.getYouToDestination(startDate, youStart, destination);
+    this.getYouToHome(returnDate, destination, youStart)
     this.getLocationPhotos(airportCodes[destination])
     this.setState({ isFormComplete : true });
   }
   
   getLocationPhotos = async (city) => {
     const { setImages } = this.props;
-    const photos = await getPhotos(city);
-    setImages(photos);
+    try{
+      const photos = await getPhotos(city);
+      setImages(photos);
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   getMeToDestination = async (date, startingLocation, destination) => {
     const { setMeFlights } = this.props;
-    const flights = await getFlights(date, startingLocation, destination)
-    setMeFlights(flights)
+    try {
+      const flights = await getFlights(date, startingLocation, destination)
+      setMeFlights(flights)
+    } catch (error){
+      console.log(error)
+    }
   }
   
   getMeToHome = async (date, startingLocation, destination) => {
     const { setMeReturnFlights } = this.props;
-    const flights = await getFlights(date, startingLocation, destination)
-    setMeReturnFlights(flights)
+    try{
+      const flights = await getFlights(date, startingLocation, destination)
+      setMeReturnFlights(flights)
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   getYouToDestination = async (date, startingLocation, destination) => {
     const { setYouFlights } = this.props;
-    const flights = await getFlights(date, startingLocation, destination)
-    setYouFlights(flights)
+    try {
+      const flights = await getFlights(date, startingLocation, destination)
+      setYouFlights(flights)
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   getYouToHome = async (date, startingLocation, destination) => {
     const { setYouReturnFlights } = this.props;
-    const flights = await getFlights(date, startingLocation, destination)
-    setYouReturnFlights(flights)
+    try {
+      const flights = await getFlights(date, startingLocation, destination)
+      setYouReturnFlights(flights)
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   render= () => {
