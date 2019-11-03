@@ -11,8 +11,10 @@ export const getFlights = async (date, startingLocation, destination) => {
       "x-rapidapi-key": apiKey
     }
   }
-
   const results = await fetch(flightSearchURL+query, options);
+  if (!results.ok) {
+    throw Error('Woops! Something went wrong');
+  }
   const data = await results.json();
   const cleanedData = cleanFlightData(data);
 
@@ -27,6 +29,9 @@ export const getPhotos = async (location) => {
   const perPage = 'per_page=15';
   const url = `${unsplashBaseUrl}${id}&${search}&${orientation}&${perPage}&accept%20version=v1`;
   const results = await fetch(url);
+  if (!results.ok) {
+    throw Error('Woops! Something went wrong');
+  }
   const data = await results.json();
   const cleanData = cleanPhotoData(data.results);
   return cleanData;
