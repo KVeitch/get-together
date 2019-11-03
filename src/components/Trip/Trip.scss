@@ -1,0 +1,24 @@
+@import '../../variables.scss';
+
+.trips {
+  margin-top:50px;
+  display:flex;
+  justify-content: center;
+  h3 {
+    font-size:1.8em;
+  }
+  .flight_list {
+    width:25vw;
+  }
+
+  .section__images {
+    display:flex;
+    flex-direction:column;
+    margin:0 20px;
+    img {
+      width:250px;
+      margin:5px 10px
+    }
+  }
+
+}

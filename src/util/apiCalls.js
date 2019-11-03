@@ -1,5 +1,5 @@
- import apiKey from './apiKey';
-
+ import { apiKey, unsplashApiKey }  from './apiKey';
+ import { cleanPhotoData, cleanFlightData} from './helper'
 
 export const getFlights = async (date, startingLocation, destination) => {
   const flightSearchURL = 'https://apidojo-hipmunk-v1.p.rapidapi.com/flights/create-session?country=US';
@@ -12,17 +12,22 @@ export const getFlights = async (date, startingLocation, destination) => {
     }
   }
 
-  const results = await fetch(flightSearchURL+query, options)
-  return results.json()
+  const results = await fetch(flightSearchURL+query, options);
+  const data = await results.json();
+  const cleanedData = cleanFlightData(data);
+
+  return cleanedData
 }
 
-const cleanFlightData = (data) => ({
-
-})
-
-
-
-
-
-export const getPictures = () => {}
-
+export const getPhotos = async (location) => {
+  const unsplashBaseUrl ='https://api.unsplash.com/search/photos?';
+  const id = `client_id=${unsplashApiKey}`;
+  const search = `query=${location}`;
+  const orientation = 'orientation=landscape';
+  const perPage = 'per_page=15';
+  const url = `${unsplashBaseUrl}${id}&${search}&${orientation}&${perPage}&accept%20version=v1`;
+  const results = await fetch(url);
+  const data = await results.json();
+  const cleanData = cleanPhotoData(data.results);
+  return cleanData;
+}
