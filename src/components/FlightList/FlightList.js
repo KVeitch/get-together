@@ -3,7 +3,8 @@ import './FlightList.scss'
 import Flight from '../Flight/Flight'
 
 const FlightList = ({ flights }) => {
-  const flightList = flights.map((flight) => <Flight flight={flight} key={flight.flightNo} />)
+
+  const flightList = flights.map((flight) => <Flight flight={flight} key={Math.random()} />)
 
   return ( 
     <section className="section__flights">

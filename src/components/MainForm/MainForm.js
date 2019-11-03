@@ -3,12 +3,12 @@ import airportCodes from '../../util/airports'
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom'
 import { bindActionCreators } from 'redux';
-import { setCityName, setMeFlights, setYouFlights, setStartDate, setReturnDate, setMeStart, setYouStart, setDestination, setImages } from '../../actions';
+import { setCityName, setMeFlights,setMeReturnFlights, setYouReturnFlights, setYouFlights, setStartDate, setReturnDate, setMeStart, setYouStart, setDestination, setImages } from '../../actions';
 import { getFlights, getPhotos } from '../../util/apiCalls'
 import './MainForm.scss'
 
 
-export class Main extends Component {
+export class MainForm extends Component {
   constructor() {
     super()
     this.state = {
@@ -48,6 +48,8 @@ export class Main extends Component {
     setDestination(destination);
     setCityName(airportCodes[destination])
     this.getMeToDestination(startDate, meStart, destination);
+    this.getMeToHome(returnDate, destination, meStart)
+    this.getYouToHome(returnDate, destination, youStart)
     this.getYouToDestination(startDate, youStart, destination);
     this.getLocationPhotos(airportCodes[destination])
     this.setState({ isFormComplete : true });
@@ -56,7 +58,6 @@ export class Main extends Component {
   getLocationPhotos = async (city) => {
     const { setImages } = this.props;
     const photos = await getPhotos(city);
-    await console.log('in the bitch',photos)
     setImages(photos);
   }
 
@@ -65,11 +66,23 @@ export class Main extends Component {
     const flights = await getFlights(date, startingLocation, destination)
     setMeFlights(flights)
   }
+  
+  getMeToHome = async (date, startingLocation, destination) => {
+    const { setMeReturnFlights } = this.props;
+    const flights = await getFlights(date, startingLocation, destination)
+    setMeReturnFlights(flights)
+  }
 
   getYouToDestination = async (date, startingLocation, destination) => {
     const { setYouFlights } = this.props;
     const flights = await getFlights(date, startingLocation, destination)
     setYouFlights(flights)
+  }
+
+  getYouToHome = async (date, startingLocation, destination) => {
+    const { setYouReturnFlights } = this.props;
+    const flights = await getFlights(date, startingLocation, destination)
+    setYouReturnFlights(flights)
   }
 
   render= () => {
@@ -160,8 +173,8 @@ export class Main extends Component {
             {airports}
           </datalist>
       </form>
-    )}
-
+    )
+  }
 }
 
 export const mapStateToProps = (state) => ({
@@ -170,14 +183,16 @@ export const mapStateToProps = (state) => ({
 
 export const mapDispatchToProps = (dispatch) => (bindActionCreators({
   setCityName,
-  setMeFlights,
-  setYouFlights,
-  setStartDate,
-  setReturnDate,
-  setMeStart,
-  setYouStart,
   setDestination,
   setImages,
+  setMeFlights,
+  setMeReturnFlights,
+  setMeStart,
+  setReturnDate,
+  setStartDate,
+  setYouFlights,
+  setYouReturnFlights,
+  setYouStart,
 }, dispatch));
 
-export default connect(mapStateToProps, mapDispatchToProps) (Main);
+export default connect(mapStateToProps, mapDispatchToProps) (MainForm);

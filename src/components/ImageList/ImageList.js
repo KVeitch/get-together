@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const ImageList = ({ images }) => {
-  const imageList = images.map(url => <img src={url} alt="picture from your destination"/>)
+  const imageList = images.map(url => <img src={url} alt="sites to see together"/>)
 
   return (
     <section className="section__images">

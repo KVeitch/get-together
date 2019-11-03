@@ -3,8 +3,18 @@ export const setMeFlights = (flights) => ({
   flights,
 });
 
+export const setMeReturnFlights = (flights) => ({
+  type: 'SET_ME_RETURN_FLIGHTS',
+  flights,
+});
+
 export const setYouFlights = (flights) => ({
   type: 'SET_YOU_FLIGHTS',
+  flights,
+});
+
+export const setYouReturnFlights = (flights) => ({
+  type: 'SET_YOU_RETURN_FLIGHTS',
   flights,
 });
 

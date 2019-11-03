@@ -5,10 +5,10 @@
   display:flex;
   justify-content: center;
   h3 {
-    font-size:1.5em;
+    font-size:1.8em;
   }
   .flight_list {
-    width:250px;
+    width:25vw;
   }
 
   .section__images {
@@ -16,10 +16,9 @@
     flex-direction:column;
     margin:0 20px;
     img {
-      width:240;
+      width:250px;
       margin:5px 10px
     }
   }
-
 
 }

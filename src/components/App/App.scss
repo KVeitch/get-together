@@ -1,6 +1,6 @@
 @import '../../variables.scss';
 // $main-bg: #d6cbff;
-// $main-higlight: #CBDEFF;
+// $main-highlight: #CBDEFF;
 // $main-secondary: #FFCBDA
 
 * {
@@ -22,7 +22,7 @@
 .title {
   height:14vh;
   padding-top:8vh;
-  background-color: $main-higlight;
+  background-color: $main-highlight;
   border-bottom: 1px solid $main-secondary;
   display:flex;
   justify-content: center;
