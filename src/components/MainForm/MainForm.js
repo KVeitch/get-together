@@ -38,6 +38,7 @@ export class MainForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
+    e.stopPropagation()
     const { setStartDate, setReturnDate, setMeStart, setYouStart, setDestination, setCityName } = this.props;
     const { meStart, youStart, destination, startDate, returnDate } = this.state;
 
