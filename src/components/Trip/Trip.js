@@ -7,7 +7,7 @@ import './Trip.scss'
 
 export const Trip = ({ meFlights, youFlights, images, youReturnFlights, meReturnFlights }) => {
 const meFlightsOut = meFlights.length < 11 ? meFlights : meFlights.splice(0,10)
-const meFlightsBack = meReturnFlights.length <1 1 ? meReturnFlights : meReturnFlights.splice(0,10)
+const meFlightsBack = meReturnFlights.length <11 ? meReturnFlights : meReturnFlights.splice(0,10)
 const youFlightsOut = youFlights.length < 11 ? youFlights : youFlights.splice(0,10)
 const youFlightsBack = youReturnFlights.length < 11 ? youReturnFlights : youReturnFlights.splice(0,10)
 return(
