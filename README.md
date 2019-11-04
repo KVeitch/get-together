@@ -1,5 +1,9 @@
 # Connection: An App for two
 
+### - [Live Site](https://turing-connection.herokuapp.com/) 
+
+-[https://turing-connection.herokuapp.com/](https://turing-connection.herokuapp.com/)
+
 ## Summary
 
 A travel app bringing two people together to a common destination. Connection allows someone to flights from two different cities to siungle destination.
