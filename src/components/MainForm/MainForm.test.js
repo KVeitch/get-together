@@ -3,6 +3,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { MainForm, mapDispatchToProps } from './MainForm';
 import * as actions from '../../actions';
+import { getPhotos, getFlights } from '../../util/apiCalls';
 
 jest.mock('../../util/apiCalls');
 
@@ -69,6 +70,47 @@ describe('MainForm', () => {
     });
   });
 
+  it('should fire multiple actions when the for is submitted', () => {
+    const mockEvent = {
+      preventDefault: jest.fn(),
+      stopPropagation: jest.fn()
+    };
+    const mockMeStart = 'DEN';
+    const mockYouStart = 'SFO';
+    const mockDestination = 'JFK';
+    const mockStartDate = { month: '10', day: '11', year: '2020' };
+    const mockReturnDate = { month: '12', day: '13', year: '2020' };
+
+
+    const wrapperSubmit = shallow(<MainForm
+      setStartDate={jest.fn()}
+      setReturnDate={jest.fn()}
+      setMeStart={jest.fn()}
+      setYouStart={jest.fn()}
+      setDestination={jest.fn()}
+      setCityName={jest.fn()}
+    />);
+    wrapperSubmit.instance().setState({
+      meStart: mockMeStart,
+      youStart: mockYouStart,
+      destination: mockDestination,
+      startDate: mockStartDate,
+      returnDate: mockReturnDate
+    });
+    wrapperSubmit.instance().getMeToDestination = jest.fn();
+    wrapperSubmit.instance().getMeToHome = jest.fn();
+    wrapperSubmit.instance().getYouToDestination = jest.fn();
+    wrapperSubmit.instance().getYouToHome = jest.fn();
+    wrapperSubmit.instance().getLocationPhotos = jest.fn();
+
+    wrapperSubmit.instance().handleSubmit(mockEvent);
+
+    expect(wrapperSubmit.instance().getMeToDestination).toHaveBeenCalledWith(mockStartDate, mockMeStart, mockDestination);
+    expect(wrapperSubmit.instance().getMeToHome).toHaveBeenCalledWith(mockReturnDate, mockDestination, mockMeStart);
+    expect(wrapperSubmit.instance().getYouToDestination).toHaveBeenCalledWith(mockStartDate, mockYouStart, mockDestination);
+    expect(wrapperSubmit.instance().getYouToHome).toHaveBeenCalledWith(mockReturnDate, mockDestination, mockYouStart);
+  });
+
   it('should run handleSubmit when the form is submitted', () => {
     const event = { preventDefault: jest.fn(), stopPropagation: jest.fn() };
     wrapper.instance().handleSubmit = jest.fn();
@@ -79,11 +121,41 @@ describe('MainForm', () => {
   });
 
   it('should get location photos', () => {
-
+    wrapper.instance().getLocationPhotos('denver');
+    expect(getPhotos).toHaveBeenCalled();
   });
 
-  it('should get flights to destination', () => {});
-  it('should get return flights ', () => {});
+  it('should get user flights to destination', () => {
+    const mockDate = { month: '12', day: '22', year: '1976' };
+    const mockStart = 'SFO';
+    const mockDestination = 'DEN';
+    wrapper.instance().getMeToDestination(mockDate, mockStart, mockDestination);
+    expect(getFlights).toHaveBeenCalled();
+  });
+
+  it('should get user return flights', () => {
+    const mockDate = { month: '12', day: '22', year: '1976' };
+    const mockStart = 'SFO';
+    const mockDestination = 'DEN';
+    wrapper.instance().getMeToHome(mockDate, mockStart, mockDestination);
+    expect(getFlights).toHaveBeenCalled();
+  });
+
+  it('should get friend flights to destination', () => {
+    const mockDate = { month: '12', day: '22', year: '1976' };
+    const mockStart = 'SFO';
+    const mockDestination = 'DEN';
+    wrapper.instance().getYouToDestination(mockDate, mockStart, mockDestination);
+    expect(getFlights).toHaveBeenCalled();
+  });
+
+  it('should get friend return flights', () => {
+    const mockDate = { month: '12', day: '22', year: '1976' };
+    const mockStart = 'SFO';
+    const mockDestination = 'DEN';
+    wrapper.instance().getYouToHome(mockDate, mockStart, mockDestination);
+    expect(getFlights).toHaveBeenCalled();
+  });
 });
 
 describe('MainForm mapDispatchToProps', () => {
@@ -278,5 +350,13 @@ describe('MainForm mapDispatchToProps', () => {
     const mappedProps = mapDispatchToProps(mockDispatch);
     mappedProps.setYouStart('SET_YOU_START', mockDate);
     expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
+  });
+});
+
+describe('MainForm conditional render', () => {
+  it('should render a redirect when the form is completed', () => {
+    const wrapperCond = shallow(<MainForm />);
+    wrapperCond.instance().setState({ isFormComplete: true });
+    expect(wrapperCond).toMatchSnapshot();
   });
 });

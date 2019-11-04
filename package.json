@@ -49,7 +49,9 @@
       "enzyme-to-json/serializer"
     ],
     "collectCoverageFrom": [
-      "src/**/{!(serviceWorker),}.js"
+      "src/**/{!(serviceWorker),}.js",
+      "!src/index.js",
+      "!src/reducers/index.js"
     ]
   }
 }
