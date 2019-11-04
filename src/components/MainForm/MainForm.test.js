@@ -7,7 +7,7 @@ import * as actions from '../../actions';
 jest.mock('../../util/apiCalls');
 
 describe('MainForm', () => {
-  const wrapper = shallow(<MainForm />);
+  let wrapper = shallow(<MainForm />);
   it('should match the initial snapshot', () => {
     expect(wrapper).toMatchSnapshot();
   });
