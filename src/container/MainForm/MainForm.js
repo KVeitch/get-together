@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
+import PropTypes from 'prop-types';
 import airportCodes from '../../util/airports';
 import {
   setCityName,
@@ -227,3 +228,17 @@ export const mapDispatchToProps = (dispatch) => (bindActionCreators({
 }, dispatch));
 
 export default connect(null, mapDispatchToProps)(MainForm);
+
+MainForm.propTypes = {
+  setCityName: PropTypes.func,
+  setDestination: PropTypes.func,
+  setImages: PropTypes.func,
+  setMeFlights: PropTypes.func,
+  setMeReturnFlights: PropTypes.func,
+  setMeStart: PropTypes.func,
+  setReturnDate: PropTypes.func,
+  setStartDate: PropTypes.func,
+  setYouFlights: PropTypes.func,
+  setYouReturnFlights: PropTypes.func,
+  setYouStart: PropTypes.func,
+};

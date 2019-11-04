@@ -1,5 +1,6 @@
 import React from 'react';
 import './FlightList.scss';
+import PropTypes from 'prop-types';
 import Flight from '../Flight/Flight';
 
 const FlightList = ({ flights }) => {
@@ -19,3 +20,7 @@ const FlightList = ({ flights }) => {
 };
 
 export default FlightList;
+
+FlightList.propTypes = {
+  flights: PropTypes.array
+};

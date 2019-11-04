@@ -13,10 +13,12 @@ exports[`should match the snapshot with all the data passed in correctly 1`] = `
       </h3>
       <FlightList
         flights={Array []}
+        key="mfo"
       />
     </div>
     <div
       className="me_flights_back flight_list"
+      key="mfb"
     >
       <h3>
         Home ← Me
@@ -39,6 +41,7 @@ exports[`should match the snapshot with all the data passed in correctly 1`] = `
       <FlightList
         className="you_flights_out"
         flights={Array []}
+        key="yfo"
       />
     </div>
     <div
@@ -49,6 +52,7 @@ exports[`should match the snapshot with all the data passed in correctly 1`] = `
       </h3>
       <FlightList
         flights={Array []}
+        key="yfb"
       />
     </div>
   </section>
