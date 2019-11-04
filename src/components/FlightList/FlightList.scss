@@ -3,4 +3,13 @@
 .section__flights {
   border:1px solid $logo-color;
   padding: 10px;
+  border-radius: 10px;
+
+}
+
+.flight_list {
+  > h3 {
+    font-size:1.5em;
+    margin-top:15px;
+  }
 }

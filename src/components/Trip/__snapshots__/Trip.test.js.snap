@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should match the snapshot with all the data passed in correctly 1`] = `
+<div
+  className="trips"
+>
+  <section>
+    <div
+      className="me_flights_out flight_list"
+    >
+      <h3>
+        Me → Us
+      </h3>
+      <FlightList
+        flights={Array []}
+      />
+    </div>
+    <div
+      className="me_flights_back flight_list"
+    >
+      <h3>
+        Home ← Me
+      </h3>
+      <FlightList
+        flights={Array []}
+      />
+    </div>
+  </section>
+  <ImageList
+    images={Array []}
+  />
+  <section>
+    <div
+      className="you_flights_out flight_list"
+    >
+      <h3>
+        Us ← You
+      </h3>
+      <FlightList
+        className="you_flights_out"
+        flights={Array []}
+      />
+    </div>
+    <div
+      className="you_flights_back flight_list"
+    >
+      <h3>
+        You → Home
+      </h3>
+      <FlightList
+        flights={Array []}
+      />
+    </div>
+  </section>
+</div>
+`;

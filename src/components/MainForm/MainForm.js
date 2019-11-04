@@ -1,17 +1,29 @@
 /* eslint-disable max-lines-per-function */
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { Redirect } from 'react-router-dom'
-import { bindActionCreators } from 'redux'
-import airportCodes from '../../util/airports'
-import { setCityName, setMeFlights,setMeReturnFlights, setYouReturnFlights, setYouFlights, setStartDate, setReturnDate, setMeStart, setYouStart, setDestination, setImages } from '../../actions'
-import { getFlights, getPhotos } from '../../util/apiCalls'
-import './MainForm.scss'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
+import { bindActionCreators } from 'redux';
+import airportCodes from '../../util/airports';
+import {
+  setCityName,
+  setMeFlights,
+  setMeReturnFlights,
+  setYouReturnFlights,
+  setYouFlights,
+  setStartDate,
+  setReturnDate,
+  setMeStart,
+  setYouStart,
+  setDestination,
+  setImages
+} from '../../actions';
+import { getFlights, getPhotos } from '../../util/apiCalls';
+import './MainForm.scss';
 
 
 export class MainForm extends Component {
   constructor() {
-    super()
+    super();
     this.state = {
       destination: '',
       isFormComplete: false,
@@ -19,102 +31,102 @@ export class MainForm extends Component {
       returnDate: '',
       startDate: '',
       youStart: ''
-    }
+    };
   }
 
   handleChange = (e) => {
-    const airportCode = e.target.value.split(':')[0].toUpperCase()
-    this.setState({ [e.target.name]: airportCode })
+    const airportCode = e.target.value.split(':')[0].toUpperCase();
+    this.setState({ [e.target.name]: airportCode });
   }
 
   handleDate = (e) => {
-    const dateSplit = e.target.value.split('-')
+    const dateSplit = e.target.value.split('-');
     const date = { 
       year: dateSplit[0],
       month: dateSplit[1],
       day: dateSplit[2]
-    }
-    this.setState({ [e.target.name]:date })
+    };
+    this.setState({ [e.target.name]:date });
   }
 
   handleSubmit = (e) => {
-    e.preventDefault()
-    e.stopPropagation()
-    const { setStartDate, setReturnDate, setMeStart, setYouStart, setDestination, setCityName } = this.props
-    const { meStart, youStart, destination, startDate, returnDate } = this.state
+    e.preventDefault();
+    e.stopPropagation();
+    const { setStartDate, setReturnDate, setMeStart, setYouStart, setDestination, setCityName } = this.props;
+    const { meStart, youStart, destination, startDate, returnDate } = this.state;
 
-    setStartDate(startDate)
-    setReturnDate(returnDate)
-    setMeStart(meStart)
-    setYouStart(youStart)
-    setDestination(destination)
-    setCityName(airportCodes[destination])
-    this.getMeToDestination(startDate, meStart, destination)
-    this.getMeToHome(returnDate, destination, meStart)
-    this.getYouToDestination(startDate, youStart, destination)
-    this.getYouToHome(returnDate, destination, youStart)
-    this.getLocationPhotos(airportCodes[destination])
-    this.setState({ isFormComplete : true })
+    setStartDate(startDate);
+    setReturnDate(returnDate);
+    setMeStart(meStart);
+    setYouStart(youStart);
+    setDestination(destination);
+    setCityName(airportCodes[destination]);
+    this.getMeToDestination(startDate, meStart, destination);
+    this.getMeToHome(returnDate, destination, meStart);
+    this.getYouToDestination(startDate, youStart, destination);
+    this.getYouToHome(returnDate, destination, youStart);
+    this.getLocationPhotos(airportCodes[destination]);
+    this.setState({ isFormComplete : true });
   }
 
   getLocationPhotos = async (city) => {
-    const { setImages } = this.props
-    try{
-      const photos = await getPhotos(city)
-      setImages(photos)
+    const { setImages } = this.props;
+    try {
+      const photos = await getPhotos(city);
+      setImages(photos);
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   }
 
   getMeToDestination = async (date, startingLocation, destination) => {
-    const { setMeFlights } = this.props
+    const { setMeFlights } = this.props;
     try {
-      const flights = await getFlights(date, startingLocation, destination)
-      setMeFlights(flights)
+      const flights = await getFlights(date, startingLocation, destination);
+      setMeFlights(flights);
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   }
 
   getMeToHome = async (date, startingLocation, destination) => {
-    const { setMeReturnFlights } = this.props
+    const { setMeReturnFlights } = this.props;
     try {
-      const flights = await getFlights(date, startingLocation, destination)
-      setMeReturnFlights(flights)
+      const flights = await getFlights(date, startingLocation, destination);
+      setMeReturnFlights(flights);
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   }
 
   getYouToDestination = async (date, startingLocation, destination) => {
-    const { setYouFlights } = this.props
+    const { setYouFlights } = this.props;
     try {
-      const flights = await getFlights(date, startingLocation, destination)
-      setYouFlights(flights)
+      const flights = await getFlights(date, startingLocation, destination);
+      setYouFlights(flights);
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   }
 
   getYouToHome = async (date, startingLocation, destination) => {
-    const { setYouReturnFlights } = this.props
+    const { setYouReturnFlights } = this.props;
     try {
-      const flights = await getFlights(date, startingLocation, destination)
-      setYouReturnFlights(flights)
+      const flights = await getFlights(date, startingLocation, destination);
+      setYouReturnFlights(flights);
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   }
 
   render= () => {
-    const { isFormComplete } = this.state
+    const { isFormComplete } = this.state;
 
     if (isFormComplete) {
-      return <Redirect to="/trip" />
+      return <Redirect to="/trip" />;
     }
 
-    const airports = Object.keys(airportCodes).map((airport, i) => <option key={i} value={`${airport}:${airportCodes[airport]}`} />)
+    const airports = Object.keys(airportCodes).map((airport, i) => <option key={i} value={`${airport}:${airportCodes[airport]}`} />);
 
     return (
       <form className="main__form-flight" onSubmit={this.handleSubmit}>
@@ -134,7 +146,7 @@ export class MainForm extends Component {
         <h3 className="originatingAirport">Where Are We Traveling From?</h3>
         <section className="form__section" >
           <div className="section__departure-container">
-            <label>Me</label>
+            <label htmlFor="meStart">Me</label>
             <input
               className="airport0"
               type="text"
@@ -147,7 +159,7 @@ export class MainForm extends Component {
             />
           </div>
           <div className="section__departure-container">
-            <label>You</label>
+            <label htmlFor="youStart">You</label>
             <input
               className="airport1"
               type="text"
@@ -163,7 +175,7 @@ export class MainForm extends Component {
         <h3>When Are We Going?</h3>
         <section className="form__section">
           <div className="date__container">
-            <label>Leaving On</label>
+            <label htmlFor="startDate">Leaving On</label>
             <input
               className="startDate"
               type="date"
@@ -174,7 +186,7 @@ export class MainForm extends Component {
             />
           </div>
           <div className="date__container">
-            <label>Coming Back</label>
+            <label htmlFor="returnDate">Coming Back</label>
             <input
               className="endDate"
               type="date"
@@ -195,7 +207,7 @@ export class MainForm extends Component {
           {airports}
         </datalist>
       </form>
-    )
+    );
   }
 }
 
@@ -212,6 +224,6 @@ export const mapDispatchToProps = (dispatch) => (bindActionCreators({
   setYouFlights,
   setYouReturnFlights,
   setYouStart
-}, dispatch))
+}, dispatch));
 
-export default connect(null, mapDispatchToProps)(MainForm)
+export default connect(null, mapDispatchToProps)(MainForm);
