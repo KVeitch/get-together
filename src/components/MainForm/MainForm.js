@@ -191,8 +191,8 @@ export class MainForm extends Component {
           Let's Go!
         </button>
         <datalist id="airportCodes">
-            {airports}
-          </datalist>
+          {airports}
+        </datalist>
       </form>
     )
   }
