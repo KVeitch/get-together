@@ -1,10 +1,10 @@
-import React from 'react'
+import React from 'react';
 // import PropTypes from 'prop-types';
-import { Route, Link } from 'react-router-dom'
-import './App.scss'
-import Trip from '../Trip/Trip'
-import MainForm from '../MainForm/MainForm'
-import bluePlane from '../../images/blue-plane.png'
+import { Route, Link } from 'react-router-dom';
+import './App.scss';
+import Trip from '../Trip/Trip';
+import MainForm from '../MainForm/MainForm';
+import bluePlane from '../../images/blue-plane.png';
 
 const App = () => (
   <div className="App">
@@ -32,6 +32,6 @@ const App = () => (
     <Route exact path="/" render={() => <MainForm />} />
     <Route exact path="/trip" render={() => <Trip />} />
   </div>
-)
+);
 
-export default App
+export default App;
