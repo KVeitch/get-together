@@ -13,4 +13,4 @@ const Flight = ({ flight }) => {
   )
 }
 
-export default Flight
+export default Flight;

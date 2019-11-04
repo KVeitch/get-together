@@ -1,3 +1,4 @@
+/* eslint-disable max-lines-per-function */
 import React from 'react';
 import { connect } from 'react-redux';
 import FlightList from '../../components/FlightList/FlightList';

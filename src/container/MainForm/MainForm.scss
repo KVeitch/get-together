@@ -1,13 +1,9 @@
 @import '../../variables.scss';
-// $main-bg: #d6cbff;
-// $main-higlight: #CBDEFF;
-// $main-secondary: #FFCBDA
 
 .main__form-flight {
   padding:5vh;
   display:flex;
   flex-direction: column;
-  // justify-content: center;
   align-items: center;
 
   h3 {
@@ -18,9 +14,7 @@
 }
 
 .form__section {
-  // width:70vw;
   display:flex;
-  // justify-content: space-between;
 }
 
 .section__departure-container {

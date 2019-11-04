@@ -1,6 +1,6 @@
-import React from 'react'
-import { shallow } from 'enzyme'
-import Flight from './Flight'
+import React from 'react';
+import { shallow } from 'enzyme';
+import Flight from './Flight';
 
 
 describe('Flight', () => {
@@ -12,10 +12,10 @@ describe('Flight', () => {
     from: 'DEN',
     to: 'MRY',
     flights: 'AA 420 and AA 5718'
-  }
-  const wrapper = shallow(<Flight flight={mockFlight} />)
+  };
+  const wrapper = shallow(<Flight flight={mockFlight} />);
 
   it('should match the snapshot with all the data passed in correctly', () => {
-    expect(wrapper).toMatchSnapshot()
-  })
-})
+    expect(wrapper).toMatchSnapshot();
+  });
+});

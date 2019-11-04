@@ -1,23 +1,23 @@
 /* eslint-disable max-lines-per-function */
-import React from 'react'
-import { shallow } from 'enzyme'
-import FlightList from './FlightList'
+import React from 'react';
+import { shallow } from 'enzyme';
+import FlightList from './FlightList';
 
 describe('FlightList with data', () => {
-  const mockFlights = []
-  const mockMath = Object.create(global.Math)
-  mockMath.random = () => 0.5
-  global.Math = mockMath
-  const wrapper = shallow(<FlightList flights={mockFlights} />)
+  const mockFlights = [];
+  const mockMath = Object.create(global.Math);
+  mockMath.random = () => 0.5;
+  global.Math = mockMath;
+  const wrapper = shallow(<FlightList flights={mockFlights} />);
   it('should match the snapshot with all the data passed in correctly', () => {
-    expect(wrapper).toMatchSnapshot()
-  })
-})
+    expect(wrapper).toMatchSnapshot();
+  });
+});
 
 describe('FlightList with data', () => {
-  const mockMath = Object.create(global.Math)
-  mockMath.random = () => 0.5
-  global.Math = mockMath
+  const mockMath = Object.create(global.Math);
+  mockMath.random = () => 0.5;
+  global.Math = mockMath;
   const mockFlights = [
     {arrival: '01/15/2020', arrivalTime: '1 : 05 PM', depart: '01/12/2020', departTime: '7 : 51 PM', from: 'DEN', to: 'MRY', flights: 'AA 420 and AA 5718'},
     {
@@ -65,10 +65,10 @@ describe('FlightList with data', () => {
       to: 'MRY',
       flights: 'AA 420 and AA 5837'
     }
-  ]
-  const wrapper = shallow(<FlightList flights={mockFlights} />)
+  ];
+  const wrapper = shallow(<FlightList flights={mockFlights} />);
 
   it('should match the snapshot with all the data passed in correctly', () => {
-    expect(wrapper).toMatchSnapshot()
-  })
-})
+    expect(wrapper).toMatchSnapshot();
+  });
+});
