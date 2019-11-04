@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Flight should match the snapshot with all the data passed in correctly 1`] = `
+<section
+  className="section__flight"
+>
+  <h3>
+    DEN
+     → 
+    MRY
+  </h3>
+  <p>
+    Departs on 
+    01/12/2020
+     at 
+    7 : 51 PM
+  </p>
+  <p>
+    Arrives on 
+    01/15/2020
+     at 
+    1 : 05 PM
+  </p>
+  <p>
+    Flight 
+    AA 420 and AA 5718
+  </p>
+</section>
+`;

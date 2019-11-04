@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should match the snapshot with all the data passed in correctly 1`] = `
+<div
+  className="App"
+>
+  <header
+    className="title"
+  >
+    <div
+      className="title-container"
+    >
+      <Link
+        to="/"
+      >
+        <img
+          alt="Line art of a blue plane flying into a cloud"
+          className="plane-image"
+          src="blue-plane.png"
+        />
+      </Link>
+      <Link
+        to="/"
+      >
+        <h1>
+          Connection
+        </h1>
+      </Link>
+      <Link
+        to="/"
+      >
+        <img
+          alt="Line art of a blue plane flying into a cloud"
+          className="plane-image image-mirror"
+          src="blue-plane.png"
+        />
+      </Link>
+    </div>
+  </header>
+  <Route
+    exact={true}
+    path="/"
+    render={[Function]}
+  />
+  <Route
+    exact={true}
+    path="/trip"
+    render={[Function]}
+  />
+</div>
+`;

@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FlightList with data should match the snapshot with all the data passed in correctly 1`] = `
+<section
+  className="section__flights"
+>
+  Please be patient we're finding flights for you...
+</section>
+`;
+
+exports[`FlightList with data should match the snapshot with all the data passed in correctly 2`] = `
+<section
+  className="section__flights"
+>
+  <Flight
+    flight={
+      Object {
+        "arrival": "01/15/2020",
+        "arrivalTime": "1 : 05 PM",
+        "depart": "01/12/2020",
+        "departTime": "7 : 51 PM",
+        "flights": "AA 420 and AA 5718",
+        "from": "DEN",
+        "to": "MRY",
+      }
+    }
+    key="0.5"
+  />
+  <Flight
+    flight={
+      Object {
+        "arrival": "01/14/2020",
+        "arrivalTime": "7 : 36 PM",
+        "depart": "01/12/2020",
+        "departTime": "2 : 35 PM",
+        "flights": "AA 482 and AA 5905",
+        "from": "DEN",
+        "to": "MRY",
+      }
+    }
+    key="0.5"
+  />
+  <Flight
+    flight={
+      Object {
+        "arrival": "01/15/2020",
+        "arrivalTime": "1 : 05 PM",
+        "depart": "01/12/2020",
+        "departTime": "5 : 16 PM",
+        "flights": "AA 2065 and AA 5718",
+        "from": "DEN",
+        "to": "MRY",
+      }
+    }
+    key="0.5"
+  />
+  <Flight
+    flight={
+      Object {
+        "arrival": "01/12/2020",
+        "arrivalTime": "7 : 36 PM",
+        "depart": "01/12/2020",
+        "departTime": "5 : 16 PM",
+        "flights": "AA 2065 and AA 5905",
+        "from": "DEN",
+        "to": "MRY",
+      }
+    }
+    key="0.5"
+  />
+  <Flight
+    flight={
+      Object {
+        "arrival": "01/13/2020",
+        "arrivalTime": "1 : 05 PM",
+        "depart": "01/12/2020",
+        "departTime": "2 : 35 PM",
+        "flights": "AA 482 and AA 5718",
+        "from": "DEN",
+        "to": "MRY",
+      }
+    }
+    key="0.5"
+  />
+  <Flight
+    flight={
+      Object {
+        "arrival": "01/12/2020",
+        "arrivalTime": "11 : 03 PM",
+        "depart": "01/12/2020",
+        "departTime": "7 : 51 PM",
+        "flights": "AA 420 and AA 5837",
+        "from": "DEN",
+        "to": "MRY",
+      }
+    }
+    key="0.5"
+  />
+</section>
+`;

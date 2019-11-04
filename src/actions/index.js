@@ -18,11 +18,6 @@ export const setYouReturnFlights = (flights) => ({
   flights,
 });
 
-export const setLocationPictures = (pictures) => ({
-  type: 'SET_LOCATION_PICTURES',
-  pictures,
-});
-
 export const setStartDate = (date) => ({
   type: 'SET_START_DATE',
   date,
