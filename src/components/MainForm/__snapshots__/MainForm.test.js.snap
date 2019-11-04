@@ -35,7 +35,7 @@ exports[`MainForm should match the initial snapshot 1`] = `
         Me
       </label>
       <input
-        autoComplete="on"
+        autoComplete="off"
         className="airport0"
         list="airportCodes"
         name="meStart"

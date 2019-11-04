@@ -1,5 +1,5 @@
- import { apiKey, unsplashApiKey }  from './apiKey'
- import { cleanPhotoData, cleanFlightData} from './helper'
+import { apiKey, unsplashApiKey } from './apiKey'
+import { cleanPhotoData, cleanFlightData } from './helper'
 
 export const getFlights = async (date, startingLocation, destination) => {
   const flightSearchURL = 'https://apidojo-hipmunk-v1.p.rapidapi.com/flights/create-session?country=US'
@@ -17,7 +17,6 @@ export const getFlights = async (date, startingLocation, destination) => {
   }
   const data = await results.json()
   const cleanedData = cleanFlightData(data)
-
   return cleanedData
 }
 
