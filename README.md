@@ -9,8 +9,8 @@ A travel app bringing two people together to a common destination. Connection al
 - Kirk Veitch - [github account](https://github.com/KVeitch)
 
 ## Technology  
-- [Hipmunk API]()
-- [Unsplash API]()
+- [Hipmunk API](https://rapidapi.com/apidojo/api/hipmunk1)
+- [Unsplash API](https://unsplash.com/)
 - React
 - Redux
 - React Router
@@ -41,7 +41,7 @@ This was a solo for Mod Three at Turing. The major focus was to further develop 
 
 ### The Trip
 
-![image](./DOCS/trio.png)
+![image](./DOCS/trip.png)
 
 
 
