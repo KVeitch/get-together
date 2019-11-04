@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "eb174564106a4e6c25c98e8de2a28de0",
+    "revision": "316817304d50072e0e84518d79bddd72",
     "url": "/KVeitch/get-together/index.html"
   },
   {
-    "revision": "ff5c420bfb71e15621c8",
+    "revision": "6c94e14ab8d5745c19a9",
     "url": "/KVeitch/get-together/static/css/main.09bfb9d0.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/KVeitch/get-together/static/js/2.0295730b.chunk.js"
   },
   {
-    "revision": "ff5c420bfb71e15621c8",
-    "url": "/KVeitch/get-together/static/js/main.fb29c06e.chunk.js"
+    "revision": "6c94e14ab8d5745c19a9",
+    "url": "/KVeitch/get-together/static/js/main.ef13f435.chunk.js"
   },
   {
     "revision": "32356605e946c52e4fda",
