@@ -1,12 +1,10 @@
 @import '../../variables.scss';
 
 .section__flight {
-  margin:5px 10px;
-  border:1px solid $main-highlight;
+  margin:10px 10px;
+  border:2px solid $main-highlight;
   text-overflow: ellipsis;
   padding:10px;
+  border-radius: 10px;
 
-  h3 {
-    font-size:1.5em;
-  }
 }

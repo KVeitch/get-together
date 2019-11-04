@@ -1,15 +1,15 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import FlightList from '../FlightList/FlightList'
-import ImageList from '../ImageList/ImageList'
-import './Trip.scss'
+import FlightList from '../FlightList/FlightList';
+import ImageList from '../ImageList/ImageList';
+import './Trip.scss';
 
 export const Trip = ({ meFlights, youFlights, images, youReturnFlights, meReturnFlights }) => {
-const meFlightsOut = meFlights.length < 11 ? meFlights : meFlights.splice(0,10)
-const meFlightsBack = meReturnFlights.length <11 ? meReturnFlights : meReturnFlights.splice(0,10)
-const youFlightsOut = youFlights.length < 11 ? youFlights : youFlights.splice(0,10)
-const youFlightsBack = youReturnFlights.length < 11 ? youReturnFlights : youReturnFlights.splice(0,10)
+const meFlightsOut = meFlights.length < 11 ? meFlights : meFlights.splice(0,10);
+const meFlightsBack = meReturnFlights.length <11 ? meReturnFlights : meReturnFlights.splice(0,10);
+const youFlightsOut = youFlights.length < 11 ? youFlights : youFlights.splice(0,10);
+const youFlightsBack = youReturnFlights.length < 11 ? youReturnFlights : youReturnFlights.splice(0,10);
 return(
   <div className="trips">
     <section>
@@ -34,8 +34,8 @@ return(
       </div>
     </section>
   </div>
-  )
-}
+  );
+};
 
 export const mapStateToProps = (state) => ({
 meFlights: state.meFlights,

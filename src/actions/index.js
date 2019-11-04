@@ -1,54 +1,54 @@
 export const setMeFlights = (flights) => ({
   type: 'SET_ME_FLIGHTS',
-  flights,
+  flights
 });
 
 export const setMeReturnFlights = (flights) => ({
   type: 'SET_ME_RETURN_FLIGHTS',
-  flights,
+  flights
 });
 
 export const setYouFlights = (flights) => ({
   type: 'SET_YOU_FLIGHTS',
-  flights,
+  flights
 });
 
 export const setYouReturnFlights = (flights) => ({
   type: 'SET_YOU_RETURN_FLIGHTS',
-  flights,
+  flights
 });
 
 export const setStartDate = (date) => ({
   type: 'SET_START_DATE',
-  date,
+  date
 });
 
 export const setReturnDate = (date) => ({
   type: 'SET_RETURN_DATE',
-  date,
+  date
 });
 
 export const setMeStart = (airport) => ({
   type: 'SET_ME_START',
-  airport,
+  airport
 });
 
 export const setYouStart = (airport) => ({
   type: 'SET_YOU_START',
-  airport,
+  airport
 });
 
 export const setDestination = (destination) => ({
   type: 'SET_DESTINATION',
-  destination,
-})
+  destination
+});
 
 export const setImages = (images) => ({
   type: 'SET_IMAGES',
-  images,
-})
+  images
+});
 
 export const setCityName = (cityName) => ({
   type: 'SET_CITY_NAME',
-  cityName,
-})
+  cityName
+});
