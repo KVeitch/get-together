@@ -46,7 +46,7 @@ describe('Action Creators',() => {
       type: 'SET_DESTINATION',
       destination:mockDestination,
     }
-    const results =setDestination(mockDestination);
+    const results = setDestination(mockDestination);
     expect(results).toEqual(expected)
   })
 
