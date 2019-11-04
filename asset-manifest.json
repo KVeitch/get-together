@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/KVeitch/get-together/static/css/main.09bfb9d0.chunk.css",
+    "main.js": "/KVeitch/get-together/static/js/main.4aa99d9e.chunk.js",
+    "main.js.map": "/KVeitch/get-together/static/js/main.4aa99d9e.chunk.js.map",
+    "runtime-main.js": "/KVeitch/get-together/static/js/runtime-main.aa4767ba.js",
+    "runtime-main.js.map": "/KVeitch/get-together/static/js/runtime-main.aa4767ba.js.map",
+    "static/js/2.6b5845ce.chunk.js": "/KVeitch/get-together/static/js/2.6b5845ce.chunk.js",
+    "static/js/2.6b5845ce.chunk.js.map": "/KVeitch/get-together/static/js/2.6b5845ce.chunk.js.map",
+    "index.html": "/KVeitch/get-together/index.html",
+    "precache-manifest.5acef2abf284f5236be88020ee0638fc.js": "/KVeitch/get-together/precache-manifest.5acef2abf284f5236be88020ee0638fc.js",
+    "service-worker.js": "/KVeitch/get-together/service-worker.js",
+    "static/css/main.09bfb9d0.chunk.css.map": "/KVeitch/get-together/static/css/main.09bfb9d0.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.aa4767ba.js",
+    "static/js/2.6b5845ce.chunk.js",
+    "static/css/main.09bfb9d0.chunk.css",
+    "static/js/main.4aa99d9e.chunk.js"
+  ]
+}
