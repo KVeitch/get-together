@@ -1,5 +1,4 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
 import { Route, Link } from 'react-router-dom';
 import './App.scss';
 import Trip from '../../container/Trip/Trip';

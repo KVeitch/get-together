@@ -1,8 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export const ImageList = ({ images }) => {
-  const imageList = images.map((url) => (
-    <img src={url} alt="sites to see together" />
+  const imageList = images.map((url, i) => (
+    <img src={url} alt="sites to see together" key={i} />
   ));
 
   return (
@@ -14,3 +15,7 @@ export const ImageList = ({ images }) => {
 };
 
 export default ImageList;
+
+ImageList.propTypes = {
+  images: PropTypes.array
+};

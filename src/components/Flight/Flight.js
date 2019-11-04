@@ -1,8 +1,9 @@
-import React from 'react'
-import './Flight.scss'
+import React from 'react';
+import PropTypes from 'prop-types';
+import './Flight.scss';
 
 const Flight = ({ flight }) => {
-  const {depart, arrival, from, to, arrivalTime, departTime, flights} = flight
+  const { depart, arrival, from, to, arrivalTime, departTime, flights } = flight;
   return (
     <section className="section__flight">
       <h3>{from} &rarr; {to}</h3>
@@ -10,7 +11,11 @@ const Flight = ({ flight }) => {
       <p>Arrives on {arrival} at {arrivalTime}</p>
       <p>Flight {flights}</p>
     </section>
-  )
-}
+  );
+};
 
 export default Flight;
+
+Flight.propTypes = {
+  flight: PropTypes.object
+};
